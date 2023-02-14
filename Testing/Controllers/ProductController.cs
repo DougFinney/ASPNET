@@ -12,6 +12,12 @@ namespace Testing.Controllers
             this.repo = repo;
         }
 
+        public IActionResult DeleteProduct(Product product)
+        {
+            repo.DeleteProduct(product);
+            return RedirectToAction("Index");
+        }
+
         public IActionResult Index()
         {
             var products = repo.GetAllProducts();
